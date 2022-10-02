@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+
+</head>
+
+<body>
+    <header class="main">
+        <div class="info">
+            <div class="title">{{projecttitle}}</div>
+            <div class="last-update">Last update: <span class="value">{{timeago}}</span></div>
+        </div>
+        <div class="toolbar">
+            <div id="save-btn" class="action">Save</div>
+            <div class="action">Settings</div>
+        </div>
+    </header>
+    
+    <div class="main-layout">
+        <div id="canvassize" class="result">
+
+                
+
+            <!-- render a pdf editor-->
+            <div id="canvas-editor">
+                <div id="canvas-editor-toolbar">
+                    <div class="action" id="canvas-editor-toolbar-undo"><i class="fa fa-undo"></i></div>
+                    <div class="action" id="canvas-editor-toolbar-redo"><i class="fa fa-repeat"></i></div>
+                    <!-- select icon -->
+                    <div class="action" id="canvas-editor-toolbar-select"><i class="fa fa-hand-pointer-o"></i></div>                    
+                    <div class="action" id="canvas-editor-toolbar-rect"><i class="fa fa-square-o"></i></div>                                    
+                    <!-- document icon -->
+                    <div class="action" id="canvas-editor-toolbar-document"><i class="fa fa-file-text-o"></i></div>
+                    <div class="action" id="canvas-editor-toolbar-save"><i class="fa fa-floppy-o"></i></div>
+                   
+                </div>
+
+                <div class="fabric-canvas-wrapper">
+                <canvas id="canvas">
+
+                </canvas> 
+                </div>
+ 
+
+
+            </div>
+
+            <style>
+                #canvas{
+                    border: 1px solid transparent;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                
+                }
+
+                #canvas-editor {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                #canvas-editor-toolbar {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 40px;
+                    background-color: rgb(17, 15, 15);
+                    z-index: 100;
+                }
+
+                #canvas-editor-toolbar .action {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    cursor: pointer;
+                }
+
+                #canvas-editor-toolbar .action:hover {
+                    background-color: rgb(61, 48, 48);
+                }
+
+                #canvas-editor-canvas {
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    width: 100%;
+                    height: calc(100% - 40px);
+                    background-color: #fff;
+                    z-index: 1;
+                }
+            </style>
+            
+
+
+
+
+
+        </div>
+        <div id="splitter" class="splitter" data-splitter="yes"></div>
+        <div class="editors" data-tabs="yes">
+            <div class="tabs">
+            </div>
+
+
+        </div>
+    </div>
+    <footer class="status">
+
+    </footer>
+    <!-- partial -->
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js" integrity="sha512-1+czAStluVmzKLZD98uvRGNVbc+r9zLKV4KeAJmvikygfO71u3dtgo2G8+uB1JjCh2GVln0ofOpz9ZTxqJQX/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/fabric.js"></script>
+
+</html>
